@@ -9,5 +9,6 @@ package test1;
  * @author user
  */
 public interface Factory {
-    
+    //工廠返回商品
+    public Product getProduct();
 }

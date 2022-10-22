@@ -14,7 +14,12 @@ public class Test1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Factory friesFac = new FrenchFriesFactory();
+        Product fries = friesFac.getProduct();
+        Product myfries = ((FrenchFriesFactory) friesFac).getProduct("無鹽的");
+
+        fries.describe();//我是有鹽巴薯條
+        myfries.describe();//我是無鹽的薯條
     }
     
 }
