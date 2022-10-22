@@ -23,11 +23,42 @@ public class Test2 {
         this.now = 0;
     }
 
+    //    簡單工廠模式
+    public void setStrategy(DoType doType) {
+        switch (doType) {
+            case ADD ->
+                this.strategy = new add();
+            case MINUS ->
+                this.strategy = new minus();
+            case DIVIDE ->
+                this.strategy = new divide();
+            case MULTYPLY ->
+                this.strategy = new multyply();
+        }
+    }
+
+    public enum DoType {
+        ADD, MINUS, DIVIDE, MULTYPLY
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Calculator myCalculator = new Calculator();
 
+        Calculator.DoType DoType = Calculator.DoType.ADD;
+
+        myCalculator.setStrategy(DoType.MINUS);
+        System.out.println(myCalculator.execute(1, 5));
+
+        MRTStrategy myMRTStartegy = new MRTStrategy();
+        PriceCalculator MRTPriceCalculator = new PriceCalculator(myMRTStartegy);
+        System.out.println(MRTPriceCalculator.calculate(20));
+
+        BusStrategy myBusStrategy = new BusStrategy();
+        PriceCalculator BusPriceCalculator = new PriceCalculator(myBusStrategy);
+        System.out.println(BusPriceCalculator.calculate(20));
     }
 
 }
