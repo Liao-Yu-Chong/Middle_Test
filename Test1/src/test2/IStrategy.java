@@ -10,8 +10,6 @@ package test2;
  */
 public interface IStrategy {
 
-    public int calculate();
-
     public int caculate(int a, int b);
 
 }
