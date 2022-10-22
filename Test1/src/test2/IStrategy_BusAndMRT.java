@@ -8,10 +8,7 @@ package test2;
  *
  * @author user
  */
-public interface IStrategy {
+public interface IStrategy_BusAndMRT {
 
-    public int calculate();
-
-    public int caculate(int a, int b);
-
+    public int calculate(int km);
 }
