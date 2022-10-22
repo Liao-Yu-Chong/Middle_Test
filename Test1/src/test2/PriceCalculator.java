@@ -10,13 +10,13 @@ package test2;
  */
 public class PriceCalculator {
 
-    MRTStrategy strategy;
+    IStrategy_BusAndMRT strategy;
 
-    public PriceCalculator(MRTStrategy strategy) {
+    public PriceCalculator(IStrategy_BusAndMRT strategy) {
         this.strategy = strategy;
     }
 
-    public void setStrategy(MRTStrategy strategy) {
+    public void setStrategy(IStrategy_BusAndMRT strategy) {
         this.strategy = strategy;
     }
 
@@ -24,7 +24,7 @@ public class PriceCalculator {
         return this.calculate(km, strategy);
     }
 
-    public int calculate(int km, MRTStrategy strategy) {
+    public int calculate(int km, IStrategy_BusAndMRT strategy) {
         this.strategy = strategy;
         return strategy.calculate(km);
     }
