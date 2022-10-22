@@ -11,7 +11,7 @@ package test1;
 public class FrenchFries implements Product {
     
     //預設有鹽巴的薯條
-    String state = "有鹽巴";
+    String state = "salt";
     //預設的建構子
     protected FrenchFries(){}
     //帶入狀態的建構子
@@ -21,6 +21,6 @@ public class FrenchFries implements Product {
     
     @Override
     public void describe(){
-        System.out.println("我是"+ state +"薯條");
+        System.out.println("I'm " + state + " FrenchFries");
     }
 }
